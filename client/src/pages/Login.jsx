@@ -1,14 +1,15 @@
 import React from 'react'
 import {assets} from '../assets/assets'
 import { Star } from 'lucide-react'
+import { SignIn } from '@clerk/clerk-react'
 const Login = () => {
   return (
     <div className='min-h-screen flex flex-col md:flex-row'>
       {/* background image */}
-      <img src={assets.bgImage} alt="bg-image" className='absolute top-0 left-0 -z-10 w-full h-full object-cover' />
+      <img src={assets.bgImage} alt="bg-image" className='absolute top-0 left-0 -z-1 w-full h-full object-cover' />
 
       {/* left section */}
-      <div className='flex-1 flex flex-col justify-between items-start p-6  md:p-10 lg:p-40'>
+      <div className='flex-1 flex flex-col justify-between items-start p-6 md:p-10 lg:pl-40'>
         <img src={assets.logo} alt="logo" className='h-12 object-contain' />
         <div>
           <div className='flex items-center gap-3 mb-4 max-md:mt-10'>
@@ -24,6 +25,10 @@ const Login = () => {
           <p className='text-xl md:text-3xl text-indigo-900 max-w-72 md:max-w-md'>connect with global community on pingup</p>
         </div>
         <span className='md:h-10'></span>
+      </div>
+      {/* right section */}
+      <div className='flex flex-1 justify-center items-center p-6 sm:p-10'>
+     <SignIn />
       </div>
     </div>
   )
