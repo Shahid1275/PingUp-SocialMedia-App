@@ -1,7 +1,8 @@
 import React from 'react'
 import {assets} from '../assets/assets'
-import { useNavigate } from 'react-router-dom';
+import { Link,  useNavigate } from 'react-router-dom';
 import MenuItems from './MenuItems';
+import { CirclePlus } from 'lucide-react';
 const Sidebar = ({ sidebaropen, setSidebaropen }) => {
   const navigate = useNavigate();
   return (
@@ -10,6 +11,10 @@ const Sidebar = ({ sidebaropen, setSidebaropen }) => {
       <img src={assets.logo} onClick={() => navigate('/')} alt="logo image" className='w-26 ml-7 my-2 cursor-pointer' />
       <hr className='border-gray-300 mb-8'/>
       <MenuItems setsidebaropen={setSidebaropen}/>
+    <Link to="/create-post" className='flex justify-center items-center gap-2 py-2.5 mt-6 mx-6 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 hover:to-purple-800 hover:from-indigo-700 hover:to-purple-800 active:scale-95 transition text-white cursor-pointer'> 
+    <CirclePlus className='w-5 h-5'/>
+    Create Post
+    </Link>
         </div>
     </div>
   )
