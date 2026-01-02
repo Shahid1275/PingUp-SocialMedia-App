@@ -30,6 +30,11 @@ const StoriesBar = () => {
             <img src={story.user.profile_picture} alt="this is the user story" className='absolute w-8 h-8 top-3 left-3 z-10 rounded-full ring ring-gray-100 shadow'/>
             <p className='absolute top-[4.5rem] left-3 text-white/60 text-sm truncate max-w-[6rem]'>{story.content}</p>
             <p className='text-white absolute bottom-1 right-2 z-10 text-xs'>{moment(story.createdAt).fromNow()}</p>
+            {
+                story.story_media === 'imgage' ?
+                <img src={story.story_media_url} className='w-full h-full object-cover rounded-lg'/> :
+                <video src={story.story_media_url} className='w-full h-full object-cover rounded-lg'/>
+            }
         </div>
     ))
 }
